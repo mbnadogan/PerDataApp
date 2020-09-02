@@ -1,0 +1,74 @@
+<mvc:View controllerName="PerDataApp.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<App id="idAppControl">
+		<pages>
+			<Page title="Personel Bilgileri Görüntüleme Ve Giriş Sayfası">
+				<content>
+					<VBox direction="Column" id="vbox0" justifyContent="Center" width="100%">
+						<HBox class="sapUiTinyMarginTop" alignItems="Center">
+							<Label text="Personel Numarası" width="200px" class="sapUiTinyMarginBegin"/>
+							<Input xmlns="sap.m" value="{viewModel>/Pernr}" width="auto" class="sapUiTinyMarginBegin"/>
+						</HBox>
+						<HBox class="sapUiTinyMarginBegin" alignItems="Center">
+							<Label xmlns="sap.m" text="Şirket Kodu" width="200px"/>
+							<Input xmlns="sap.m" value="{viewModel>/Bukrs}" width="auto" class="sapUiTinyMarginBegin"/>
+						</HBox>
+						<HBox class="sapUiTinyMarginBegin" alignItems="Center">
+							<Label xmlns="sap.m" text="Personel Alanı" width="200px"/>
+							<Input xmlns="sap.m" value="{viewModel>/Werks}" width="auto" class="sapUiTinyMarginBegin"/>
+						</HBox>
+						<HBox class="sapUiTinyMarginBegin" alignItems="Center">
+							<Label xmlns="sap.m" text="Personel Alt Alanı" width="200px"/>
+							<Input xmlns="sap.m" value="{viewModel>/Btrtl}" width="auto" class="sapUiTinyMarginBegin"/>
+						</HBox>
+						<HBox alignItems="Center" class="sapUiTinyMargin">
+							<Label xmlns="sap.m" text=" " width="200px"/>
+							<Button text="Ekle" press="onAddPerData" width="85px" class="sapUiTinyMarginBegin" type="Accept"></Button>
+							<Button text="Sil"  press="onAddPerData" width="85px" class="sapUiTinyMarginBegin" type="Reject"></Button>
+						</HBox>
+					</VBox>
+					<Table id="table0" items="{/PerDataSet}" noDataText="Personel Bilgisi Bulunamadı.">
+						<headerToolbar>
+							<Toolbar>
+								<content>
+									<Title text="Personel Listesi" level="H2"/>
+								</content>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column id="column0">
+								<header>
+									<Label id="label0" text="Personel Numarası"/>
+								</header>
+							</Column>
+							<Column id="column1">
+								<header>
+									<Label id="label1" text="Şirket Kodu"/>
+								</header>
+							</Column>
+							<Column id="column2">
+								<header>
+									<Label id="label2" text="Personel Alanı"/>
+								</header>
+							</Column>
+							<Column id="column3">
+								<header>
+									<Label id="label3" text="Personel Alt Alanı"/>
+								</header>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem counter="0" id="item1">
+								<cells>
+									<Text id="text0" maxLines="0" text="{Pernr}"/>
+									<Text id="text1" maxLines="0" text="{Bukrs}"/>
+									<Text id="text2" maxLines="0" text="{Werks}"/>
+									<Text id="text3" maxLines="0" text="{Btrtl}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
